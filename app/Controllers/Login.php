@@ -53,6 +53,7 @@ class Login extends BaseController
             
             if($pass == $userValidation['password_users']){
                 $this->session->set('isLoggedIn', true);
+                $this->session->set('id_usersSession', $userValidation['id_users']);
                 return redirect()->to('/home');
             }
            
@@ -62,6 +63,7 @@ class Login extends BaseController
             
             if($pass == $adminValidation['password_admin']){
                 $this->session->set('isLoggedAdminIn', true);
+                $this->session->set('id_adminSession', $adminValidation['id_admin']);
                 return redirect()->to('/admin');
             }
            

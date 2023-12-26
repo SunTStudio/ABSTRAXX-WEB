@@ -7,11 +7,13 @@ class Admin extends BaseController
 
     protected $session;
     protected $usersData;
+    protected $adminData;
     protected $fotografer;
     protected $appointment;
     function __construct()
     {
     $this->usersData = new \App\Models\UsersData();
+    $this->adminData = new \App\Models\AdminData();
     $this->fotografer = new \App\Models\Fotografer();
     $this->appointment = new \App\Models\Appointment();
     $this->session = \Config\Services::session();
@@ -268,7 +270,12 @@ class Admin extends BaseController
     }
     public function dashboard()
     {
+        $id_admin = $this->session->get('id_adminSession');
+
+
         $data = [
+            "data_admin" => $this->adminData->where('id_admin',$id_admin)->first(),
+            "data_appointment" => $this->appointment->orderBy('id_appointment', 'DESC')->limit(2)->get()->getResult(),
             "title" => "Dashboard",
         ];
         return view('Admin/Dashboard/dashboard',$data);

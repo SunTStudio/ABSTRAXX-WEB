@@ -3,6 +3,9 @@
 <link rel="stylesheet" href="/css/landingpage.css">
 <?php $this->endSection('link'); ?>
 <?php $this->section('content'); ?>
+
+<h1 class="text-light"><?= session()->get('id_usersSession'); ?></h1>
+
 <div class="container">
   <nav class="navbar navbar-expand-lg" data-bs-theme="dark" >
     <div class="container-fluid">

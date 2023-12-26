@@ -5,6 +5,8 @@
 <?php $this->endSection('link'); ?>
 <?php $this->section('content'); ?>
 
+<!-- <h1 class="text-light"><?= var_dump($data_users); ?></h1> -->
+
 <div class="container">
   <nav class="navbar navbar-expand-lg" data-bs-theme="dark" >
     <div class="container-fluid">
@@ -39,8 +41,8 @@
 background: linear-gradient(228deg, rgba(0,0,60,1) 0%, rgba(14,14,80,1) 34%, rgba(13,9,54,1) 66%, rgba(8,20,71,1) 100%);">
         <div class="row text-light">
           <div class="col-6 p-3">
-            <p>Selamat Sore,</p>
-            <p class="fs-3 fw-medium">Rafi Nur</p>
+            <p>Selamat Datang,</p>
+            <p class="fs-3 fw-medium"><?= $data_users['nama_users']; ?></p>
             <a href="/" style="text-decoration:none;" class="text-light"><p class="fw-light" style="font-size:1vw;">Logout ></p></a>
           </div>
           <div class="col-6 d-flex align-items-end flex-column pt-4 pe-3">
