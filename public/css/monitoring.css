@@ -1,0 +1,17 @@
+#appointment p{
+    font-size:1vw;
+    margin-bottom: 0.2rem;
+    color: white;
+}
+
+#appointment {
+    background-color: rgb(1, 1, 116);
+}
+
+.custom-btn {
+    font-size: 0.9vw; /* Atur ukuran font */
+    padding: 0.3rem 1rem; /* Atur padding tombol */
+    display: block;
+  }
+
+  

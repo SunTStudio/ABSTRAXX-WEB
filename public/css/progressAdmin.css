@@ -1,0 +1,105 @@
+.monitoring-list{
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    color: #333;
+    list-style-type: none;
+    border-radius: 10px;
+    display: flex;
+    padding: 0.1rem 0.1rem;
+    position: relative;
+    z-index: 10;
+}
+
+.monitoring-item{
+    padding: 0 0.5rem;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive:1 ;
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    position: relative;
+}
+
+.monitoring-item + .monitoring-item::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 19px;
+    background: yellow;
+    width: 100%;
+    height: 2px;
+    transform: translateX(-50%);
+    z-index: -10;
+}
+
+.progress-count{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 600;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    color: transparent;
+}
+
+.progress-count::after{
+    content: "";
+    height: 30px;
+    width: 30px;
+    background: yellow;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -10;
+}
+
+.progress-count::before{
+    content: "";
+    height: 5px;
+    width: 10px;
+    border-left: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -60%) rotate(-45deg);
+    transform-origin: center center;
+}
+
+.progress-label{
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.current-item .progress-count::before,
+.current-item ~ .monitoring-item .progress-count::before{
+    display: none;
+}
+
+.current-item ~ .monitoring-item .progress-count::after{
+    background: white ;
+    border: 2px solid rgb(255, 255, 0);
+}
+
+.current-item ~ .monitoring-item .progress-label{
+    opacity: 0.5;
+}
+
+.current-item .progress-count::before{
+    background: #fff;
+}
+
+.current-item .progress-count{
+    color: black;
+}

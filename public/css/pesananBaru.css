@@ -1,0 +1,16 @@
+body {
+  background-color: black;
+}
+.headline {
+  background-image: url("../img/headline.png");
+  background-size: cover;
+  height: 25vw;
+}
+
+#headAbs {
+  opacity: 0.8;
+  margin-bottom: -0.5rem;
+}
+
+#kontakKami ul {list-style-type: none;}
+

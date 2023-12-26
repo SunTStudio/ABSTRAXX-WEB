@@ -1,0 +1,31 @@
+body {
+  background-color: black;
+}
+.headline {
+  background-image: url("../img/headline.png");
+  background-size: cover;
+  height: 25vw;
+}
+
+#headAbs {
+  opacity: 0.8;
+  margin-bottom: -0.5rem;
+}
+
+#kontakKami ul {list-style-type: none;}
+
+
+
+.downPayment .container .row .col-5 {
+    background-color:rgb(48, 48, 48);
+   /* background-color:white; */
+    /* color : black; */
+    
+}
+
+.downPayment .container .row .col-5 tbody tr td{
+    /* background-color:rgb(48, 48, 48); */
+    background-color:rgb(48, 48, 48);
+    color : rgb(255, 255, 255);
+
+}

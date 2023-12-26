@@ -1,0 +1,6 @@
+.dotted-border {
+    border: 3px dotted #0502cf; /* Mengatur lebar (2px), gaya (dotted), dan warna (#000) garis */
+
+}
+
+#kontakKami ul {list-style-type: none;}

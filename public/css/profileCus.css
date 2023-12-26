@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+#appointment p{
+    font-size:0.9vw;
+    margin-bottom: 0.2rem;
+    color: white;
+}
+
+.progressBg{
+    background: rgb(6,6,83);
+background: linear-gradient(180deg, rgba(6,6,83,1) 0%, rgba(21,21,131,1) 27%, rgba(20,10,126,1) 68%, rgba(1,20,102,1) 100%);
+}
+
+.custom-btn {
+    font-size: 0.9vw; /* Atur ukuran font */
+    padding: 0.3rem 1rem; /* Atur padding tombol */
+    display: block;
+  }
+
+.headline {
+  background-image: url("../img/headline.png");
+  background-size: cover;
+  height: 25vw;
+}
+
+#headAbs {
+  opacity: 0.8;
+  margin-bottom: -0.5rem;
+}
+
+#kontakKami ul {list-style-type: none;}
+
