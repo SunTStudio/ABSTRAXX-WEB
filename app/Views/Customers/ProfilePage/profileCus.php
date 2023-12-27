@@ -186,7 +186,7 @@ background: linear-gradient(228deg, rgba(0,0,60,1) 0%, rgba(14,14,80,1) 34%, rgb
       <div class="col-4">
         <div class="row  rounded justify-content-end">
           <div class="col-11 bg-white rounded p-3">
-            <table class="table" style="font-size: 1vw;">
+            <!-- <table class="table" style="font-size: 1vw;">
                   <p class="fw-medium">Detail Pesanan</p>
                   <hr>
                     <tbody>
@@ -252,6 +252,68 @@ background: linear-gradient(228deg, rgba(0,0,60,1) 0%, rgba(14,14,80,1) 34%, rgb
                             <td>Thori Muhammad</td>
                         </tr>
                     </tbody>
+                </table> -->
+                <table class="table" style="font-size: 1vw;">
+                  <p class="fw-medium">Detail Pesanan</p>
+                  <hr>
+                    <tbody>
+                        <tr>
+                            <td>Nama Pemesan</td>
+                            <td>:</td>
+                            <td><?= $data_users['nama_users']; ?></td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>Email Pemesan</td>
+                            <td>:</td>
+                            <td><?= $data_users['email_users']; ?></td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>Tanggal Pemesanan</td>
+                            <td>:</td>
+                            <td><?= $data_users['tanggal_pesan']; ?></td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>Tempat Pelaksanaan</td>
+                            <td>:</td>
+                            <td><?= $data_users['alamat_users']; ?></td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>Pilih paket</td>
+                            <td>:</td>
+                            <td><?= $data_users['detail_users']; ?></td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>Tambahan</td>
+                            <td>:</td>
+                            <td><?= $data_monitoring['detail_users']; ?></td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>Progres Saat Ini</td>
+                            <td>:</td>
+                            <td><?= $data_monitoring['progress_monitoring']; ?></td>
+                        </tr>
+                    </tbody>
+                    <?php foreach ($data_fotografer as $index => $row) : ?>
+                    <tbody>
+                        <tr>
+                            <td><?= $row->spesialis_fotografer; ?></td>
+                            <td>:</td>
+                            <td><?= $row->nama_fotografer; ?></td>
+                        </tr>
+                    </tbody>
+                    <?php endforeach; ?>
                 </table>
           </div>
         </div>

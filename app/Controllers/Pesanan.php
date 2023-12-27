@@ -49,7 +49,7 @@ class Pesanan extends BaseController
             'lokasi_users' => $lokasi_users,
             'detail_users' => $detail_users,
             'update_monitoring' => '1',
-            'progress_monitoring' => 'Proses Input Data',
+            'progress_monitoring' => 'Pilih Paket',
         ];
 
         $data_users = [
@@ -111,6 +111,7 @@ class Pesanan extends BaseController
         $detail_users = $this->request->getGet('detail_users');
         $dataMonitoring = [
             'update_monitoring' => $update_monitoring,
+            'progress_monitoring' => 'Persetujuan Kontrak',
         ];
 
         $dataUsers = [
@@ -140,6 +141,7 @@ class Pesanan extends BaseController
         $kontrak_users = $this->request->getGet('kontrak_users');
         $dataMonitoring = [
             'update_monitoring' => $update_monitoring,
+            'progress_monitoring' => 'Pembayaran DP',
         ];
 
         $dataUsers = [
@@ -168,6 +170,8 @@ class Pesanan extends BaseController
 
         $dataMonitoring = [
             'update_monitoring' => $update_monitoring,
+            'progress_monitoring' => 'Survei',
+
         ];
 
         if($userValidation['detail_users'] == 'paket satu'){
