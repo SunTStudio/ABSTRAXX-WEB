@@ -110,7 +110,7 @@ class Admin extends BaseController
             'default_nama' => $default_nama,
             'default_email' => $default_email,
             'default_notelp' => $default_notelp,
-            'default_tanggal' => $default_tanggal,
+            'default_tanggal' => $default_tanggal, 
             'default_detail' => $default_detail,
             'default_alamat' => $default_alamat,
         ];

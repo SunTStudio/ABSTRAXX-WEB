@@ -97,28 +97,21 @@
                         <tr>
                             <td>Nama</td>
                             <td>:</td>
-                            <td>Rafi Nur</td>
-                        </tr>
-                    </tbody>
-                    <tbody>
-                        <tr>
-                            <td>Alamat</td>
-                            <td>:</td>
-                            <td>Kepuh Permai nomor c57</td>
+                            <td><?= $data_users['nama_users']; ?></td>
                         </tr>
                     </tbody>
                     <tbody>
                         <tr>
                             <td>No telp</td>
                             <td>:</td>
-                            <td>089669103069</td>
+                            <td><?= $data_users['notelp_users']; ?></td>
                         </tr>
                     </tbody>
                     <tbody>
                         <tr>
                             <td>Email</td>
                             <td>:</td>
-                            <td>mahsun@gmail.com</td>
+                            <td><?= $data_users['email_users']; ?></td>
                         </tr>
                     </tbody>
                 </table>
@@ -131,65 +124,39 @@
                         <tr>
                             <td>Tanggal Pemesanan</td>
                             <td>:</td>
-                            <td>19/10/2023</td>
-                        </tr>
-                    </tbody>
-                    <tbody>
-                        <tr>
-                            <td>Tanggal Pelaksanaan</td>
-                            <td>:</td>
-                            <td>30/10/2023</td>
+                            <td><?= $data_users['tanggal_pesan']; ?></td>
                         </tr>
                     </tbody>
                     <tbody>
                         <tr>
                             <td>Tempat Pelaksanaan</td>
                             <td>:</td>
-                            <td>GSP UGM</td>
+                            <td><?= $data_users['alamat_users']; ?></td>
                         </tr>
                     </tbody>
                     <tbody>
                         <tr>
                             <td>Pilih paket</td>
                             <td>:</td>
-                            <td>Paket Satu</td>
+                            <td><?= $data_users['detail_users']; ?></td>
                         </tr>
                     </tbody>
                     <tbody>
                         <tr>
                             <td>Tambahan</td>
                             <td>:</td>
-                            <td>Konsep Touring</td>
+                            <td><?= $data_monitoring['detail_users']; ?></td>
                         </tr>
                     </tbody>
+                    <?php foreach ($data_fotografer as $index => $row) : ?>
                     <tbody>
                         <tr>
-                            <td>Penanggung Jawab</td>
+                            <td><?= $row->spesialis_fotografer; ?></td>
                             <td>:</td>
-                            <td>Mahsun Btamam</td>
+                            <td><?= $row->nama_fotografer; ?></td>
                         </tr>
                     </tbody>
-                    <tbody>
-                        <tr>
-                            <td>Fotografer</td>
-                            <td>:</td>
-                            <td>Latip Dwi Susilo</td>
-                        </tr>
-                    </tbody>
-                    <tbody>
-                        <tr>
-                            <td>Videografer</td>
-                            <td>:</td>
-                            <td>Muhammad Rafi Nur</td>
-                        </tr>
-                    </tbody>
-                    <tbody>
-                        <tr>
-                            <td>Editor</td>
-                            <td>:</td>
-                            <td>Thori Muhammad</td>
-                        </tr>
-                    </tbody>
+                    <?php endforeach; ?>
                 </table>
             </div>
         </div>
@@ -284,10 +251,11 @@
         
         <div class="row justify-content-center mt-5">
           <div class="col-4 text-center">
-            <form action="/pesanan/full-payment">
+            <a href="<?= base_url('Pesanan/prosesDownPayment?update_monitoring=4');?>">
             <button type="submit" class="btn btn-primary me-1">Simpan Perubahan</button>
-          <button type="submit" class="btn btn-warning ms-1">Batal</button>
-          </form>
+        </a>
+            
+
           </div>
         </div>
 

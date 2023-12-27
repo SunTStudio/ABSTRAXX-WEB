@@ -92,30 +92,35 @@
         <hr>
         <div class="row">
             <div class="col-5">
-                <form class=" text-secondry" action="/pesanan/pilihPaket">
+                <form class=" text-secondry" action="/pesanan/prosesDataPesananBaru">        
         <div class="mb-3">
             <label for="nama" class="form-label">Nama Lengkap</label>
-            <input type="text" class="form-control" id="nama" aria-describedby="emailHelp">
+            <input type="text" name="nama_users" class="form-control" id="nama" aria-describedby="emailHelp">
 
         </div>
         <div class="mb-3">
             <label for="tanggal" class="form-label">Email</label>
-            <input type="text" class="form-control" id="tanggal" aria-describedby="emailHelp">
+            <input type="text" name="email_users" class="form-control" id="tanggal" aria-describedby="emailHelp">
 
         </div>
         <div class="mb-3">
             <label for="paket" class="form-label">No Telepon</label>
-            <input type="email" class="form-control" id="paket" aria-describedby="emailHelp">
+            <input type="text" name="notelp_users" class="form-control" id="paket" aria-describedby="emailHelp">
+
+        </div>
+        <div class="mb-3">
+            <label for="paket" class="form-label">Tanggal Acara</label>
+            <input type="text" name="tanggal_pesan" class="form-control" id="paket" aria-describedby="emailHelp">
 
         </div>
         <div class="mb-3">
             <label for="lokasi" class="form-label">Lokasi Acara</label>
-            <textarea type="email" class="form-control" id="lokasi" aria-describedby="emailHelp"> </textarea>
+            <textarea type="email" name="lokasi_users" class="form-control" id="lokasi" aria-describedby="emailHelp"> </textarea>
 
         </div>
         <div class="mb-3">
             <label for="lokasi" class="form-label">Keterangan Acara</label>
-            <textarea type="email" class="form-control" id="lokasi" aria-describedby="emailHelp"> </textarea>
+            <textarea type="email" name="detail_users" class="form-control" id="lokasi" aria-describedby="emailHelp"> </textarea>
 
         </div>
         <div class="row mb-5">
@@ -130,7 +135,6 @@
           </div>
         </div>
         <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
-        <button type="submit" class="btn btn-warning ms-3">Batal</button>
         </form>
             </div>
         </div>

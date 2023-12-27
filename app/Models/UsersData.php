@@ -7,7 +7,7 @@ class UsersData extends Model
  protected $primaryKey = 'id_users';
  protected $useAutoIncrement = true;
  protected $returnType = 'array';
- protected $allowedFields = ['id_users','password_users','nama_users', 'tanggal_pesan', 'detail_users', 'kontrak_users','notelp_users','alamat_users','upload_users'];
+ protected $allowedFields = ['id_users','password_users','nama_users', 'tanggal_pesan', 'detail_users', 'kontrak_users','notelp_users','alamat_users','upload_users','dp_users','fp_users'];
 
  // Dates
     protected $useTimestamps = false;

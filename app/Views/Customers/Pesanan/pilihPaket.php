@@ -86,7 +86,6 @@
 
 <section class="paketJasa">
   <div class="container-fluid">
-    <form action="/pesanan/kontrak">
     <p class="fs-3 fw-medium text-center text-light mt-5 mb-5 pb-2" >PILIH PAKET</p>
     <div class="row justify-content-center mb-5 pb-5">
       <div class="col-3"><img src="../img/paketJasa/paket1.png" width="100%" alt=""></div>
@@ -98,7 +97,8 @@
           <li>Lebih dari 50 foto</li>
           <li>1 Photografer</li>
         </ul>
-        <button type="submit" class="btn btn-primary">Pesan Sekarang</button>
+        <a href="<?= base_url('Pesanan/prosesPilihPaket?update_monitoring=2&detail_users=paket%20satu');?>">
+        <button type="submit" class="btn btn-primary">Pesan Sekarang</button></a> 
       </div>
       <div class="col-3 text-info text-center">
         <p class="fs-1 fw-normal mt-4" >Price</p>
@@ -120,7 +120,8 @@
           <li>Lebih dari 50 foto</li>
           <li>1 Photografer</li>
         </ul>
-        <button type="submit" class="btn btn-primary">Pesan Sekarang</button>
+        <a href="<?= base_url('Pesanan/prosesPilihPaket?update_monitoring=2&detail_users=paket%20dua');?>">
+        <button type="submit" class="btn btn-primary">Pesan Sekarang</button></a> 
       </div>
       
       <div class="col-3"><img src="../img/paketJasa/paket2.png" width="100%" alt=""></div>
@@ -136,7 +137,8 @@
           <li>Lebih dari 50 foto</li>
           <li>1 Photografer</li>
         </ul>
-        <button type="submit" class="btn btn-primary">Pesan Sekarang</button>
+        <a href="<?= base_url('Pesanan/prosesPilihPaket?update_monitoring=2&detail_users=paket%20tiga');?>">
+        <button type="submit" class="btn btn-primary">Pesan Sekarang</button></a> 
       </div>
       <div class="col-3 text-info text-center">
         <p class="fs-1 fw-normal mt-4" >Price</p>
@@ -145,7 +147,6 @@
       </div>
       
     </div>
-    </form>
   </div>
 </section>
 

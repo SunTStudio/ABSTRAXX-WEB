@@ -5,12 +5,14 @@ namespace App\Controllers;
 class Customer extends BaseController
 {
     protected $usersData;
+    protected $monitoring;
     protected $adminData;
     protected $session;
 
     function __construct()
     {
     $this->usersData = new \App\Models\UsersData();
+    $this->monitoring = new \App\Models\Monitoring();
     $this->adminData = new \App\Models\AdminData();
     $this->session = \Config\Services::session();
     }
@@ -19,6 +21,9 @@ class Customer extends BaseController
     public function index()
     {
         $id_users = $this->session->get('id_usersSession');
+        $userValidation = $this->usersData->where('id_users', $id_users)->first();
+        $monitoringValidation = $this->monitoring->where('id_users',$userValidation['id_users'])->first();
+        $this->session->set('id_monitoringSession', $monitoringValidation['id_monitoring']);
         $data = [
             "data_users" => $this->usersData->where('id_users', $id_users)->first(),
             "title" => "Profil Anda",

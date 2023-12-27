@@ -96,20 +96,21 @@
                 upload file kontrak yang sudah di isi di kolom upload</p>
       </div>
     </div>
-    <div class="row justify-content-center text-light mt-5 mb-5">
+    <div class="row justify-content-center text-light mt-5 mb-5 text-center">
       <div class="col-4 text-center">
         <p>Unduh File Kontrak</p>
         <button class="btn btn-secondary"><i class="bi bi-download"></i> Download File Kontrak</button>
       </div>
       <div class="col-4 text-center">
         <p>Download File Kontrak</p>
-        <button class="btn btn-secondary"><i class="bi bi-upload"></i> Upload File Kontrak</button>
+        <button class="btn btn-secondary"><i class="bi bi-upload"></i> Upload File Kontrak</button><br>
       </div>
+      <a href="<?= base_url('/Pesanan/downPayment?update_monitoring=3&kontrak_users=sudah'); ?>" class="mt-5">
+   <button class="btn btn-primary me-2 ">Simpan</button>
+  </a>
     </div>
-    <form action="/pesanan/down-payment" class="text-center mt-5">
-      <button class="btn btn-primary me-2">Simpan</button>
-      <button class="btn btn-warning ms-2">Kembali</button>
-    </form>
+    
+     
   </div>
 </section>
 

@@ -53,8 +53,8 @@ background: linear-gradient(228deg, rgba(0,0,60,1) 0%, rgba(14,14,80,1) 34%, rgb
       <div class="col-6">
         <div class="row text-center text-light ms-4">
           <div class="col-6 rounded p-2" style="background-color: #007089;">
-          <a href="/pesanan/pesananBaru" style="text-decoration:none; color:white;">
-            <p class="fw-medium fs-2">Pesanan Baru</p>
+          <a href="/pesanan/cekPesananBaru" style="text-decoration:none; color:white;">
+            <p class="fw-medium fs-2">Buat Pesanan</p>
           <i class="bi bi-plus-square" style="font-size:4.2vw;"></i>
           </a>
         </div>
