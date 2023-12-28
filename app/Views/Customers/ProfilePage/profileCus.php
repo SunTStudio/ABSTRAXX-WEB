@@ -78,56 +78,56 @@ background: linear-gradient(228deg, rgba(0,0,60,1) 0%, rgba(14,14,80,1) 34%, rgb
                     <div class="row p-3 rounded justify-content-center " id="appointment">
                         <div class="col-2 mt-2" >
                         <p >Pesanan :</p>
-                        <p class="fw-medium ">Wedding Photography</p>
-                        <p>A.N Latip Dwi</p>
-                        <p>No Telp 085686144268</p>
+                        <p class="fw-medium "><?= $data_monitoring['detail_users']; ?></p>
+                        <p>A.N <?= $data_monitoring['nama_users']; ?></p>
+                        <p>No Telp <?= $data_monitoring['notelp_users']; ?></p>
                     </div>
                     <div class="col-2 mt-2">
                         <p >Progres :</p>
-                        <p class="fw-medium ">Menunggu Revisi</p>
-                        <p>Update Terakhir :</p>
-                        <p>20/10/2023</p>
+                        <p class="fw-medium "><?= $data_monitoring['progress_monitoring']; ?></p>
+                        <p>Tanggal Pesan :</p>
+                        <p><?= $data_monitoring['tanggal_pesan']; ?></p>
                     </div>
                     <div class="col-6">
                             <ul class="monitoring-list mt-2">
                                 
-                                <li class="monitoring-item ">
+                                <li class="monitoring-item <?= $progres_monitoring0; ?>">
                                     <span class="progress-count">1</span>
                                     <span class="progress-label">Isi Data Diri</span>
                                 </li>
-                                <li class="monitoring-item ">
+                                <li class="monitoring-item <?= $progres_monitoring1; ?>">
                                     <span class="progress-count ">2</span>
                                     <span class="progress-label">Pilih Paket</span>
                                 </li>
-                                <li class="monitoring-item ">
+                                <li class="monitoring-item <?= $progres_monitoring2; ?>">
                                     <span class="progress-count">3</span>
                                     <span class="progress-label">kontrak</span>
                                 </li>
-                                <li class="monitoring-item current-item">
+                                <li class="monitoring-item <?= $progres_monitoring3; ?>">
                                     <span class="progress-count">4</span>
                                     <span class="progress-label">Dp Payment</span>
                                 </li>
-                                <li class="monitoring-item">
+                                <li class="monitoring-item <?= $progres_monitoring4; ?>">
                                     <span class="progress-count">5</span>
                                     <span class="progress-label">Survei Tim</span>
                                 </li>
-                                <li class="monitoring-item">
+                                <li class="monitoring-item <?= $progres_monitoring5; ?>">
                                     <span class="progress-count">6</span>
                                     <span class="progress-label">Eksekusi</span>
                                 </li>
-                                <li class="monitoring-item">
+                                <li class="monitoring-item <?= $progres_monitoring6; ?>">
                                     <span class="progress-count">7</span>
                                     <span class="progress-label">Editing Foto</span>
                                 </li>
-                                <li class="monitoring-item">
+                                <li class="monitoring-item <?= $progres_monitoring7; ?>">
                                     <span class="progress-count">8</span>
                                     <span class="progress-label">Revisi</span>
                                 </li>
-                                <li class="monitoring-item">
+                                <li class="monitoring-item <?= $progres_monitoring8; ?>">
                                     <span class="progress-count">9</span>
                                     <span class="progress-label">Full Payment</span>
                                 </li>
-                                <li class="monitoring-item">
+                                <li class="monitoring-item <?= $progres_monitoring9; ?>">
                                     <span class="progress-count">10</span>
                                     <span class="progress-label">Penerimaan File</span>
                                 </li>
@@ -135,10 +135,10 @@ background: linear-gradient(228deg, rgba(0,0,60,1) 0%, rgba(14,14,80,1) 34%, rgb
                     </div>
                     <div class="col-2 d-flex justify-content-end">
                         <div>
-                            <form action="/admin/monitoring/update">
+                            <form action="#">
                             <button class="btn btn-primary custom-btn mb-1" style="font-size:0.8vw;"><i class="bi bi-repeat"></i> Update</button>
                             <button class="btn btn-warning custom-btn mb-1"><i class="bi bi-list"></i> Detail</button>
-                            <button class="btn btn-danger custom-btn mb-1"><i class="bi bi-trash"></i> Hapus</button>
+                            <button class="btn btn-danger custom-btn mb-1"><i class="bi bi-trash"></i> Ubah</button>
                             </form>
                         </div>
                     </div>
@@ -155,32 +155,21 @@ background: linear-gradient(228deg, rgba(0,0,60,1) 0%, rgba(14,14,80,1) 34%, rgb
       <div class="col-6 rounded" style="background-color:#ecff00;">
         <div class="row p-3 justify-content-center">
           <p class="fw-medium fs-5">Jadwal Pertemuan Anda</p>
+          <?php foreach ($data_appointment as $index => $row) : ?>
           <div class="col-5 text-light p-3 me-3 rounded" style="background: rgb(0,0,60);
 background: linear-gradient(228deg, rgba(0,0,60,1) 0%, rgba(14,14,80,1) 34%, rgba(13,9,54,1) 66%, rgba(8,20,71,1) 100%);">
-              <p class="fw-medium">Jumat, 20 Desember 2023</p>
+              <p class="fw-medium"><?= $row->tanggal_appointment ?></p>
               <!-- <br> -->
-              <p class="text-secondary fw-medium">09.00 WIB</p>
-              <p class="fs-5 fw-medium">Melakukan Survei Lapangan.</p>
+              <p class="fs-5 fw-medium"><?= $row->keterangan_appointment ?></p>
               <br>
-              <p style="font-size:1vw;">A.N : Muh Mahsun B</p>
-              <p style="font-size:1vw;">No Telp : 085868144268</p>
-              <p style="font-size:1vw;">Lokasi : Jl AM Sangaji 24</p>
+              <p style="font-size:1vw;">A.N : <?= $row->nama_users ?></p>
+              <p style="font-size:1vw;">No Telp : <?= $row->notelp_koor ?></p>
+              <p style="font-size:1vw;">Lokasi : <?= $row->tempat_appointment ?></p>
+              <p style="font-size:1vw;">Status : <?= $row->status_appointment ?></p>
               <!-- <br> -->
               <button type="submit" class="btn btn-primary">Reschedulle</button>
           </div>
-          <div class="col-5 text-light p-3 ms-3 rounded" style="background: rgb(0,0,60);
-background: linear-gradient(228deg, rgba(0,0,60,1) 0%, rgba(14,14,80,1) 34%, rgba(13,9,54,1) 66%, rgba(8,20,71,1) 100%);">
-              <p class="fw-medium">Jumat, 20 Desember 2023</p>
-              <!-- <br> -->
-              <p class="text-secondary fw-medium">09.00 WIB</p>
-              <p class="fs-5 fw-medium">Melakukan Survei Lapangan.</p>
-              <br>
-              <p style="font-size:1vw;">A.N : Muh Mahsun B</p>
-              <p style="font-size:1vw;">No Telp : 085868144268</p>
-              <p style="font-size:1vw;">Lokasi : Jl AM Sangaji 24</p>
-              <!-- <br> -->
-              <button type="submit" class="btn btn-primary">Reschedulle</button>
-          </div>
+          <?php endforeach; ?>
         </div>
       </div>
       <div class="col-4">
