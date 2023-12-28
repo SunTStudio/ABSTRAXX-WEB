@@ -293,5 +293,11 @@ class Admin extends BaseController
         ];
         return view('Admin/Profile/profile',$data);
     }
+
+    public function laporan()
+    {
+        
+        return view('Admin/Dashboard/generatePDF');
+    }
     
 }

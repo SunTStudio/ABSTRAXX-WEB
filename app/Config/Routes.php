@@ -39,4 +39,5 @@ $routes->get('/profile/file', 'Customer::unduh');
 $routes->get('/admin/dashboard', 'Admin::dashboard');
 // 
 $routes->get('/pesanan/survei', 'Pesanan::survei');
+$routes->get('/Cetak/laporan', 'CetakPDF::generatePdf');
 

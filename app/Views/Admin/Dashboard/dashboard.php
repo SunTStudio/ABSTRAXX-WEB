@@ -7,7 +7,6 @@
 <?php $this->endSection('link'); ?>
 <?php $this->section('content') ?>
 
-<!-- <h1><?= var_dump($data_appointment); ?></h1> -->
 <section class="dashboard">
     <div class="container">
         <div class="row justify-content-center">
@@ -32,10 +31,12 @@ background: linear-gradient(228deg, rgba(0,0,60,1) 0%, rgba(14,14,80,1) 34%, rgb
                                 <i class="bi bi-clipboard-plus d-flex float-end fs-1"> </i><span class="d-flex ms-3 mb-1">Tambah Pesanan</span> 
                             </button>
                         </a>   
+                        <a href="/Cetak/laporan">
                         <button class="btn btn-success text-light text-start fw-medium fs-4 mt-2">
                           
                             <i class="bi bi-journals d-flex float-end fs-1"></i> <span class="d-flex  ms-3 mb-1">Cetak Laporan</span> </i>
                         </button>
+                        </a>
                     </div>
                     <div class="col">
                         <div class="row">

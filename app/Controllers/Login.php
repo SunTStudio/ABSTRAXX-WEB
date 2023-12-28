@@ -32,7 +32,7 @@ class Login extends BaseController
             $data = [
             "title" => "Dashboard",
              ];
-            return view('Admin/Dashboard/dashboard',$data);
+            return redirect()->to('/Admin/dashboard'); 
         }
         $data = [
             "title" => "Login",
