@@ -6,7 +6,7 @@
 <?php $this->endSection('link'); ?>
 <?php $this->section('content') ?>
 <!-- <?php var_dump($dataUsers) ?> -->
-<section class="opsiData mt-5">
+<section id="filter" class="opsiData mt-5">
     <div class="container">
         <p class="fw-medium fs-2 text-secondary " >Users</p>
         <div class="row ">
@@ -16,20 +16,15 @@
                 <a href="#" class="text-secondary link-offset-2 link-underline link-underline-opacity-0 me-3"> Selesai </a>
             </div>
             <div class="col-7 mb-3 d-flex justify-content-end">               
-                <form class="d-flex" role="search">
-                <a href="/admin/input"><button type="button" class="btn btn-secondary me-3"><i class="bi bi-file-plus"></i> Pesan Sekarang</button></a>
-                <input class="me-2 rounded" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-secondary me-3" type="submit">Search</button>
-                <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-sort-up"></i> Sort
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Terbaru</a></li>
-                    <li><a class="dropdown-item" href="#">Terlama action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-                </div>
+            <form class="d-flex" role="search" action="/cariUsers" method="GET">
+                <a href="/admin/input"><button type="button" class="btn btn-secondary me-3"><i class="bi bi-file-plus"></i> Tambah Data </button></a>
+                    <input class="me-2 rounded" type="search" name="nama_cari" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-secondary me-3" type="submit" name="cari_users" value="true">Search</button>
+                <select class="form-select form-select-sm  rounded" name="filter" aria-label="Small select example">
+                    <option selected><i class="bi bi-sort-up"></i> Urutkan</option>
+                    <option value="DESC">Terbaru</option>
+                    <option value="ASC">Terlama</option>
+                </select>
             </form>
             </div>
             <hr>
@@ -63,8 +58,11 @@
                 <td><a href="<?= $row->kontrak_users; ?>"><i class="bi bi-download"></i></a></td>
                 <td><?= $row->notelp_users; ?></td>
                 <td><?= $row->detail_users; ?></td>
-                <td><a href="<?= base_url('Admin/ubahData?id_users='.$row->id_users); 
-                    ?>">Edit</a>  |  <a href="<?= base_url('Admin/hapusData?id_users='.$row->id_users); 
+                <td>
+                    <a href="<?= base_url('Admin/ubahData?id_users='.$row->id_users); 
+                    ?>">Edit</a>  
+                    |  
+                    <a href="<?= base_url('Admin/hapusData?id_users='.$row->id_users); 
                     ?>">Hapus</a></td>
                 <td><a href="/admin/upload"><i class="bi bi-upload"></i></a></td>
                 </tr>

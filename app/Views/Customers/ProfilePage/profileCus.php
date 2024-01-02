@@ -5,7 +5,6 @@
 <?php $this->endSection('link'); ?>
 <?php $this->section('content'); ?>
 
-<!-- <h1 class="text-light"><?= var_dump($data_users); ?></h1> -->
 
 <div class="container">
   <nav class="navbar navbar-expand-lg" data-bs-theme="dark" >

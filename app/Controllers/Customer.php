@@ -23,7 +23,7 @@ class Customer extends BaseController
 
     
     public function index()
-    {
+    { 
         $id_users = $this->session->get('id_usersSession');
         $userValidation = $this->usersData->where('id_users', $id_users)->first();
         $monitoringValidation = $this->monitoring->where('id_users',$userValidation['id_users'])->first();

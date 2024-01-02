@@ -5,7 +5,7 @@
 <?php $this->endSection('link'); ?>
 <?php $this->section('content') ?>
 
-<section class="opsiData mt-5">
+<section id="filter" class="opsiData mt-5">
     <div class="container">
         <p class="fw-medium fs-2 text-secondary " >Appointment</p>
         <div class="row ">
@@ -15,20 +15,15 @@
                 <a href="#" class="text-secondary link-offset-2 link-underline link-underline-opacity-0 me-3"> Selesai </a>
             </div>
             <div class="col-7 mb-3 d-flex justify-content-end">               
-                <form class="d-flex" role="search">
+                <form class="d-flex" role="search" action="/cariAppointment" method="GET">
                 <a href="/admin/appointmentBaru"><button type="button" class="btn btn-secondary me-3"><i class="bi bi-file-plus"></i> Appointment Baru</button></a>
-                <input class="me-2 rounded" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-secondary me-3" type="submit">Search</button>
-                <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-sort-up"></i> Sort
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Terbaru</a></li>
-                    <li><a class="dropdown-item" href="#">Terlama action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-                </div>
+                <input class="me-2 rounded" type="search" name="nama_cari" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-secondary me-3" type="submit" name="cari_users" value="true">Search</button>
+                <select class="form-select form-select-sm  rounded" name="filter" aria-label="Small select example">
+                    <option selected><i class="bi bi-sort-up"></i> Urutkan</option>
+                    <option value="DESC">Terbaru</option>
+                    <option value="ASC">Terlama</option>
+                </select>
             </form>
             </div>
             <hr>
@@ -62,8 +57,11 @@
                 <td><?= $row->notelp_koor; ?></td>
                 <td><?= $row->keterangan_appointment; ?></td>
                 <td><?= $row->tempat_appointment; ?></td>
-                <td><a href="<?= base_url('Admin/ubahAppointment?id_appointment='.$row->id_appointment); 
-                    ?>">Edit</a>  |  <a href="<?= base_url('Admin/hapusAppointment?id_appointment='.$row->id_appointment); 
+                <td>
+                    <a href="<?= base_url('Admin/ubahAppointment?id_appointment='.$row->id_appointment); 
+                    ?>">Edit</a>  
+                    |  
+                    <a href="<?= base_url('Admin/hapusAppointment?id_appointment='.$row->id_appointment); 
                     ?>">Hapus</a></td>
                 <td><?= $row->status_appointment; ?></td>
                 </tr>

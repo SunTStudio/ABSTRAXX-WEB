@@ -5,5 +5,8 @@
 }
 #kontakKami ul {list-style-type: none;}
 
+#filter .form-select{
+    width: 10vw;
+}
 
 

@@ -6,7 +6,7 @@
 <?php $this->endSection() ?>
 
 <?php $this->section('content') ?>
-<section class="opsiData mt-5">
+<section id="filter" class="opsiData mt-5">
     <div class="container">
         <p class="fw-medium fs-2 text-secondary " >Monitoring</p>
         <div class="row ">
@@ -16,19 +16,14 @@
                 <a href="#" class="text-secondary link-offset-2 link-underline link-underline-opacity-0 me-3"> Sebelumnya </a>
             </div>
             <div class="col-7 mb-3 d-flex justify-content-end">               
-                <form class="d-flex" role="search">
-                <input class="me-2 rounded" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-secondary me-3" type="submit">Search</button>
-                <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-sort-up"></i> Sort
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Terbaru</a></li>
-                    <li><a class="dropdown-item" href="#">Terlama action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-                </div>
+                <form class="d-flex" role="search" action="/cariMonitoring">
+                <input class="me-2 rounded" type="search" name="nama_cari" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-secondary me-3" type="submit" name="cari_users" value="true">Search</button>
+                <select class="form-select form-select-sm  rounded" name="filter" aria-label="Small select example">
+                    <option selected><i class="bi bi-sort-up"></i> Urutkan</option>
+                    <option value="DESC">Terbaru</option>
+                    <option value="ASC">Terlama</option>
+                </select>
             </form>
             </div>
             <hr>
@@ -231,7 +226,7 @@
 </section>
 
 
-<footer class="mt-5" style="background-color:#00193F;" id="kontakKami"  >
+<footer style="background-color:#00193F;" id="kontakKami"  >
   <div class="container-fluid">
     <div class="row text-light">
       <div class="col-8"><p class="fw-medium fs-5 m-3" >ABSTRAXXX</p></div>

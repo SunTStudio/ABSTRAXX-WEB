@@ -96,7 +96,7 @@ class Admin extends BaseController
     public function ubahData()
     {
         $id = $this->request->getGet('id_users');
-        
+         
         $data_users = $this->usersData->where('id_users',$id)->first();
         $default_id = $data_users['id_users'];
         $default_nama = $data_users['nama_users'];
@@ -119,6 +119,29 @@ class Admin extends BaseController
         
        return view('Admin/InputData/inputdata',$data_view);
     }
+
+    public function cariUsers()
+    {
+        $cari_users = $this->request->getGet('cari_users');
+        $filter = $this->request->getGet('filter');
+        $nama_cari = $this->request->getGet('nama_cari');
+        $arr_users = $this->usersData->query('SELECT * FROM `users`');
+
+        if($cari_users == "true"){
+            $hasil_cari = $this->usersData->orderBy('id_users', $filter)->like('nama_users', $nama_cari, 'after')->get()->getResult();
+        }else{
+            $hasil_cari = $arr_users->getResult();
+        }
+        
+
+        $data = [
+            "title" => "Users",
+            "dataUsers" => $hasil_cari,
+        ];
+        return view('Admin/Users/users',$data);
+    }
+    
+
 
     public function appointment()
     {
@@ -162,7 +185,7 @@ class Admin extends BaseController
 
         return view('Admin/Appointment/appointmentBaru',$data);
     }
-
+ 
     public function prosesAppointment()
     {
         // $id_appointment = $this->request->getGet('nama_users');
@@ -238,6 +261,26 @@ class Admin extends BaseController
         $users_Data = $this->appointment->delete($id);
         return redirect()->to('Admin/Appointment/appointment');
     }
+
+    public function cariAppointment()
+    {
+        $cari_users = $this->request->getGet('cari_users');
+        $filter = $this->request->getGet('filter');
+        $nama_cari = $this->request->getGet('nama_cari');
+        $arr_appointment = $this->appointment->query('SELECT * FROM `appointment`');
+
+        if($cari_users == "true"){
+            $hasil_cari = $this->appointment->orderBy('id_appointment', $filter)->like('nama_users', $nama_cari, 'after')->get()->getResult();
+        }else{
+            $hasil_cari = $arr_appointment->getResult();
+        }
+        
+        $data = [
+            "title" => "Appointment",
+            "dataAppointment" => $hasil_cari,
+        ];
+        return view('Admin/Appointment/appointment',$data);
+    }
     
     public function upload()
     {
@@ -271,6 +314,26 @@ class Admin extends BaseController
             "title" => "Monitoring Update",
         ];
         return view('Admin/Monitoring/monitoringUpdate',$data);
+    }
+
+    public function cariMonitoring()
+    {
+        $cari_users = $this->request->getGet('cari_users');
+        $filter = $this->request->getGet('filter');
+        $nama_cari = $this->request->getGet('nama_cari');
+        $arr_monitoring = $this->monitoring->query('SELECT * FROM `monitoring`');
+
+        if($cari_users == "true"){
+            $hasil_cari = $this->monitoring->orderBy('id_monitoring', $filter)->like('nama_users', $nama_cari, 'after')->get()->getResult();
+        }else{
+            $hasil_cari = $arr_monitoring->getResult();
+        }
+        
+        $data = [
+            "title" => "Monitoring",
+            "data_monitoring" => $hasil_cari,
+        ];
+        return view('Admin/Monitoring/monitoring',$data);
     }
     public function dashboard()
     {
